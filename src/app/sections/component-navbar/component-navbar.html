@@ -1,0 +1,37 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="container navbar-container">
+    
+    <!-- Logo / Name -->
+    <div class="logo" (click)="scrollTo('hero')">
+      <span class="logo-text">Akshay</span>
+      <span class="logo-dot">.</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="menu" [class.open]="isMenuOpen">
+      <li>
+        <a (click)="scrollTo('hero')" [class.active]="activeSection === 'hero'">Home</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('experience')" [class.active]="activeSection === 'experience'">Experience</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('projects')" [class.active]="activeSection === 'projects'">Projects</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('education')" [class.active]="activeSection === 'education'">Education</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('contact')" [class.active]="activeSection === 'contact'">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Mobile Hamburger -->
+    <button class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</nav>

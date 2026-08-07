@@ -1,0 +1,58 @@
+<section id="projects" class="projects">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="section-tag">My Work</p>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of projects; track project.title; let i = $index) {
+        <div class="project-card" #projectCard [style.animation-delay]="i * 0.12 + 's'">
+          
+          <div class="card-header">
+            <div class="header-content">
+              <h3 class="project-title">{{ project.title }}</h3>
+              @if (project.subtitle) {
+                <p class="project-subtitle">{{ project.subtitle }}</p>
+              }
+            </div>
+            @if (project.highlight) {
+              <span class="highlight-badge">{{ project.highlight }}</span>
+            }
+          </div>
+
+          <p class="project-description">{{ project.description }}</p>
+
+          <ul class="project-points">
+            @for (point of project.points; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+
+          <div class="project-footer">
+            <div class="technologies">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+
+            @if (project.links && project.links.length > 0) {
+              <div class="project-links">
+                @for (link of project.links; track link.url) {
+                  <a [href]="link.url" target="_blank" rel="noopener" class="project-link">
+                    {{ link.label }}
+                    <span>↗</span>
+                  </a>
+                }
+              </div>
+            }
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

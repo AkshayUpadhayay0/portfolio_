@@ -1,0 +1,50 @@
+<section id="experience" class="experience">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="section-tag">Career Path</p>
+      <h2 class="section-title">Work Experience</h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      @for (exp of experiences; track exp.company) {
+        <div class="timeline-item">
+
+          <div class="timeline-dot">
+            <div class="dot-inner"></div>
+          </div>
+
+          <div class="experience-card">
+            <div class="card-top">
+              <div class="left-info">
+                <h3 class="job-title">{{ exp.title }}</h3>
+                <p class="company">{{ exp.company }}</p>
+              </div>
+              <div class="right-info">
+                <span class="duration">{{ exp.duration }}</span>
+                <span class="location">{{ exp.location }}</span>
+              </div>
+            </div>
+
+            <ul class="points">
+              @for (point of exp.points; track point) {
+                <li>{{ point }}</li>
+              }
+            </ul>
+
+            <div class="technologies">
+              @for (tech of exp.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
