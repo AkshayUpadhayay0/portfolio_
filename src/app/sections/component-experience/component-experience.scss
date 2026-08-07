@@ -1,6 +1,7 @@
 .experience {
   padding: 110px 0 100px;
-  background: #0a0a0f;
+  background: var(--bg-primary);
+  transition: background-color 0.4s ease;
 }
 
 .section-header {
@@ -8,7 +9,7 @@
   margin-bottom: 80px;
 
   .section-tag {
-    color: #6366f1;
+    color: var(--accent);
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 2.5px;
@@ -19,14 +20,14 @@
   .section-title {
     font-size: clamp(2.1rem, 4.5vw, 2.9rem);
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 14px;
   }
 
   .title-underline {
     width: 70px;
     height: 4px;
-    background: linear-gradient(90deg, #6366f1, #a78bfa);
+    background: var(--accent-gradient);
     margin: 0 auto;
     border-radius: 4px;
   }
@@ -46,7 +47,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, #6366f1, #8b5cf6 70%, transparent);
+  background: linear-gradient(to bottom, var(--accent), var(--accent-light) 70%, transparent);
 }
 
 .timeline-item {
@@ -65,8 +66,8 @@
   top: 28px;
   width: 24px;
   height: 24px;
-  background: #0a0a0f;
-  border: 3px solid #6366f1;
+  background: var(--bg-primary);
+  border: 3px solid var(--accent);
   border-radius: 50%;
   z-index: 5;
   display: flex;
@@ -77,24 +78,24 @@
   .dot-inner {
     width: 8px;
     height: 8px;
-    background: #6366f1;
+    background: var(--accent);
     border-radius: 50%;
   }
 }
 
 /* Card */
 .experience-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 28px 30px;
   transition: all 0.35s ease;
 
   &:hover {
-    background: rgba(99, 102, 241, 0.07);
-    border-color: rgba(99, 102, 241, 0.35);
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow);
   }
 }
 
@@ -109,13 +110,13 @@
   .job-title {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 5px;
   }
 
   .company {
     font-size: 1.02rem;
-    color: #818cf8;
+    color: var(--accent-light);
     font-weight: 500;
   }
 
@@ -125,7 +126,7 @@
     .duration {
       display: block;
       font-size: 0.92rem;
-      color: #c7d2fe;
+      color: var(--text-accent);
       font-weight: 600;
       margin-bottom: 3px;
       white-space: nowrap;
@@ -133,7 +134,7 @@
 
     .location {
       font-size: 0.85rem;
-      color: #64748b;
+      color: var(--text-muted);
     }
   }
 }
@@ -149,14 +150,14 @@
     margin-bottom: 10px;
     font-size: 0.95rem;
     line-height: 1.65;
-    color: #94a3b8;
+    color: var(--text-secondary);
 
     &::before {
       content: '▹';
       position: absolute;
       left: 0;
       top: 1px;
-      color: #6366f1;
+      color: var(--accent);
       font-size: 1.1rem;
       font-weight: 700;
     }
@@ -172,10 +173,16 @@
     font-size: 0.78rem;
     padding: 6px 14px;
     background: rgba(99, 102, 241, 0.12);
-    color: #a5b4fc;
+    color: var(--text-accent);
     border-radius: 50px;
     border: 1px solid rgba(99, 102, 241, 0.22);
     font-weight: 500;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background: rgba(99, 102, 241, 0.22);
+      transform: translateY(-2px);
+    }
   }
 }
 

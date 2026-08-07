@@ -1,6 +1,6 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="container navbar-container">
-    
+
     <!-- Logo / Name -->
     <div class="logo" (click)="scrollTo('hero')">
       <span class="logo-text">Akshay</span>
@@ -31,6 +31,14 @@
       <span></span>
       <span></span>
       <span></span>
+    </button>
+
+    <button class="theme-toggle" (click)="themeService.toggleTheme()" title="Toggle Theme">
+      @if (themeService.isDarkMode()) {
+      <span>☀️</span>
+      } @else {
+      <span>🌙</span>
+      }
     </button>
 
   </div>

@@ -1,6 +1,7 @@
 .skills {
   padding: 100px 0;
-  background: #0a0a0f;
+  background: var(--bg-primary);
+  transition: background-color 0.4s ease;
 }
 
 .section-header {
@@ -8,7 +9,7 @@
   margin-bottom: 60px;
 
   .section-tag {
-    color: #6366f1;
+    color: var(--accent);
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 2.5px;
@@ -19,14 +20,14 @@
   .section-title {
     font-size: clamp(2.1rem, 4.5vw, 2.9rem);
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 14px;
   }
 
   .title-underline {
     width: 70px;
     height: 4px;
-    background: linear-gradient(90deg, #6366f1, #a78bfa);
+    background: var(--accent-gradient);
     margin: 0 auto;
     border-radius: 4px;
   }
@@ -41,21 +42,23 @@
 }
 
 .skill-category {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 28px;
   transition: all 0.3s ease;
 
   &:hover {
-    border-color: rgba(99, 102, 241, 0.3);
-    background: rgba(99, 102, 241, 0.05);
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
   }
 
   .category-title {
     font-size: 1.15rem;
     font-weight: 600;
-    color: #a5b4fc;
+    color: var(--text-accent);
     margin-bottom: 18px;
   }
 
@@ -69,7 +72,7 @@
     font-size: 0.88rem;
     padding: 8px 16px;
     background: rgba(99, 102, 241, 0.12);
-    color: #e0e7ff;
+    color: var(--text-accent);
     border-radius: 50px;
     border: 1px solid rgba(99, 102, 241, 0.2);
     font-weight: 500;

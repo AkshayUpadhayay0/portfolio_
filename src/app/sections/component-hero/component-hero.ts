@@ -1,5 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { ThemeService } from '../../services/theme';
 
 @Component({
   selector: 'app-component-hero',
@@ -7,6 +9,21 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './component-hero.html',
   styleUrl: './component-hero.scss',
+  animations: [
+    trigger('fadeInUp', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(40px)' }),
+        animate('800ms cubic-bezier(0.22, 1, 0.36, 1)', 
+          style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ]),
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('1000ms ease-out', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class ComponentHero implements OnInit, OnDestroy {
   roles = [
@@ -21,6 +38,8 @@ export class ComponentHero implements OnInit, OnDestroy {
   charIndex = 0;
   isDeleting = false;
   private timeoutId: any;
+
+  constructor(public themeService: ThemeService) {}
 
   ngOnInit() {
     this.typeWriter();
@@ -58,5 +77,9 @@ export class ComponentHero implements OnInit, OnDestroy {
   scrollTo(section: string) {
     const el = document.getElementById(section);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  openAIMode() {
+    window.open('https://www.fastfol.io/akshaykuma4579', '_blank');
   }
 }
