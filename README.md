@@ -59,7 +59,7 @@ ng serve
 ```
 
 ### 📁 Project Structure
-
+```bash
 src/
 ├── app/
 │   ├── sections/
@@ -77,6 +77,7 @@ src/
 │   └── app.scss
 ├── index.html
 └── styles.scss
+```
 
 ### 🌙 Dark / Light Mode
 The portfolio supports both Dark and Light themes.
