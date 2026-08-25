@@ -56,6 +56,8 @@ npm install
 # Start the development server
 ng serve
 
+```
+
 ### 📁 Project Structure
 
 src/
@@ -82,7 +84,7 @@ The portfolio supports both Dark and Light themes.
 Your preferred theme is automatically saved in the browser using localStorage.
 
 
-👤 About the Developer
+### 👤 About the Developer
 Akshay Upadhayay
 
 Software Developer with 3+ years of experience building production-grade Android and .NET applications.
