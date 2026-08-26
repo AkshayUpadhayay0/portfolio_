@@ -21,7 +21,7 @@ constructor(public themeService: ThemeService) {}
   onWindowScroll() {
     this.isScrolled = window.scrollY > 40;
 
-    const sections = ['hero', 'experience', 'projects', 'skills', 'education', 'contact'];
+    const sections = ['hero', 'experience', 'projects', 'skills', 'education', 'hobbies', 'contact'];
 
     for (const section of sections) {
       const element = document.getElementById(section);

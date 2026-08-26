@@ -1,0 +1,58 @@
+<section id="hobbies" class="hobbies">
+    <div class="container">
+
+        <div class="section-header">
+            <p class="section-tag">When I'm Free</p>
+            <h2 class="section-title">Hobbies & Fun Projects</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">I love building small games in my free time using pure HTML, CSS & JavaScript
+            </p>
+        </div>
+
+        <div class="games-grid">
+            @for (game of games; track game.title) {
+            <div class="game-card">
+
+                <!-- Game Preview / Thumbnail -->
+                <div class="game-preview">
+                    @if (game.image) {
+                    <img [src]="game.image" [alt]="game.title + ' Preview'" class="game-thumbnail" />
+                    } @else {
+                    <div class="preview-placeholder">
+                        <span>🎮</span>
+                        <p>{{ game.title }}</p>
+                    </div>
+                    }
+                </div>
+
+                <!-- Game Info -->
+                <div class="game-info">
+                    <h3 class="game-title">{{ game.title }}</h3>
+                    <p class="game-description">{{ game.description }}</p>
+
+                    <div class="technologies">
+                        @for (tech of game.technologies; track tech) {
+                        <span class="tech-tag">{{ tech }}</span>
+                        }
+                    </div>
+
+                    <div class="game-actions">
+                        @if (game.playLink) {
+                        <a [href]="game.playLink" target="_blank" class="btn-play">
+                            Play Game →
+                        </a>
+                        }
+                        @if (game.githubLink) {
+                        <a [href]="game.githubLink" target="_blank" class="btn-code">
+                            View Code
+                        </a>
+                        }
+                    </div>
+                </div>
+
+            </div>
+            }
+        </div>
+
+    </div>
+</section>

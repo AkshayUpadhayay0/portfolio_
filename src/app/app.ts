@@ -6,6 +6,8 @@ import { ComponentProjects } from './sections/component-projects/component-proje
 import {ComponentSkills} from './sections/component-skills/component-skills';
 import { ComponentEducation } from './sections/component-education/component-education';
 import { ComponentFooter } from './sections/component-footer/component-footer';
+import { ComponentHobbies } from './sections/component-hobbies/component-hobbies';
+
 
 @Component({
   selector: 'app-root',
@@ -16,7 +18,8 @@ import { ComponentFooter } from './sections/component-footer/component-footer';
     ComponentProjects,
     ComponentSkills,
     ComponentEducation,
-    ComponentFooter
+    ComponentFooter,
+    ComponentHobbies
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
