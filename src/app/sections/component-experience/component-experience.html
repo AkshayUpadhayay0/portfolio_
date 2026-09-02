@@ -10,39 +10,47 @@
     <div class="timeline">
       <div class="timeline-line"></div>
 
-      @for (exp of experiences; track exp.company) {
-        <div class="timeline-item">
+      @for (exp of experiences; track exp.company; let i = $index) {
+      <div class="timeline-item" [class.is-right]="i % 2 !== 0" [class.is-current]="exp.duration.includes('Present')">
 
-          <div class="timeline-dot">
-            <div class="dot-inner"></div>
-          </div>
-
-          <div class="experience-card">
-            <div class="card-top">
-              <div class="left-info">
-                <h3 class="job-title">{{ exp.title }}</h3>
-                <p class="company">{{ exp.company }}</p>
-              </div>
-              <div class="right-info">
-                <span class="duration">{{ exp.duration }}</span>
-                <span class="location">{{ exp.location }}</span>
-              </div>
-            </div>
-
-            <ul class="points">
-              @for (point of exp.points; track point) {
-                <li>{{ point }}</li>
-              }
-            </ul>
-
-            <div class="technologies">
-              @for (tech of exp.technologies; track tech) {
-                <span class="tech-tag">{{ tech }}</span>
-              }
-            </div>
-          </div>
-
+        <div class="timeline-dot">
+          <div class="dot-inner"></div>
         </div>
+
+        <div class="experience-card">
+          <div class="card-top">
+            <div class="left-info">
+              <h3 class="job-title">{{ exp.title }}</h3>
+              <p class="company">
+                <svg class="company-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4 21V6a1 1 0 0 1 1-1h6v16M4 21h16M11 5h6a1 1 0 0 1 1 1v15M8 9h.01M8 13h.01M8 17h.01M15 9h.01M15 13h.01M15 17h.01"
+                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                {{ exp.company }}
+              </p>
+              <div class="right-info">
+               <span class="location">{{ exp.location }}</span>
+              </div>
+            </div>
+            <div class="right-info">
+              <span class="duration" [class.current-badge]="exp.duration.includes('Present')">
+                {{ exp.duration }}
+              </span>
+              <!-- <span class="location">{{ exp.location }}</span> -->
+            </div>
+          </div>
+
+          <p class="summary">{{ exp.summary }}</p>
+
+          <div class="technologies">
+            @for (tech of exp.technologies; track tech) {
+            <span class="tech-tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+
+      </div>
       }
     </div>
 
